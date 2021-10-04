@@ -11,3 +11,7 @@
 mkdir_cd () {
     mkdir "$1" && cd "$1" || exit
 }
+
+chezmoi-cd() {
+    cd $(chezmoi source-path)
+}
