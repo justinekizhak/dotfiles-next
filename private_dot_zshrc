@@ -1,3 +1,4 @@
+
 # -----------------------------------------------------------------------------
 # Copyright (c) 2019, Justine Kizhakkinedath
 # All rights reserved
@@ -12,3 +13,7 @@ fpath+=~/.zfunc
 . "$HOME/dotfiles/zsh/custom_functions.sh"
 . "$HOME/dotfiles/zsh/keybindings.sh"
 . "$HOME/dotfiles/zsh/zshrc.sh"
+
+# Shell completions
+. "$HOME/dotfiles/zsh/completion/argcomplete.sh"
+# . "$HOME/dotfiles/zsh/completion/chezmoi.sh"
