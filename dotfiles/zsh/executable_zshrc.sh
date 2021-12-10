@@ -24,11 +24,11 @@ if [ "${terminfo[kcud1]}" != "" ]; then
 fi
 
 eval "$(fasd --init auto)"
-eval "$(pipenv --completion)"
+# eval "$(pipenv --completion)"
 
-export PATH="/home/justine/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PATH="/home/justine/.pyenv/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 alias eme='
 setsid emacs
@@ -39,4 +39,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-cd ~/
+# cd ~/
