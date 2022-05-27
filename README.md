@@ -14,6 +14,46 @@ Contains settings for:
 
 - Zsh
 
+# Installation
+
+- Install brew
+- `brew install chezmoi`
+- `chezmoi init --apply justinekizhak/dotfiles-next`
+- Install zimfw using auto step then reset all the changes back to original
+  - `curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh`
+  - `chezmoi apply`
+       all-overwrite
+- `brew install git-delta bat pipx argcomplete ripgrep`
+
+## Delta config for chezmoi
+
+```
+# ~/.config/chezmoi/chezmoi.toml
+[diff]
+    pager = "delta"
+```
+
+## Delta config for git
+```
+# ~/.gitconfig                  
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+```
+
 # Screenshots
 
 ### ZSH shell
