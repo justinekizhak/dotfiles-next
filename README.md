@@ -16,7 +16,12 @@ Contains settings for:
 
 # Installation
 
-- Install brew
+- `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+- Add brew to path
+    ```
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/justinekizhak/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    ```
 - `brew install chezmoi`
 - `chezmoi init --apply justinekizhak/dotfiles-next`
 
