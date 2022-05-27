@@ -17,3 +17,4 @@ fpath+=~/.zfunc
 # Shell completions
 . "$HOME/dotfiles/zsh/completion/argcomplete.sh"
 # . "$HOME/dotfiles/zsh/completion/chezmoi.sh"
+export GPG_TTY=$(tty)
