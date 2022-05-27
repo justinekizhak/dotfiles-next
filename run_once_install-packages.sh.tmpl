@@ -13,7 +13,6 @@ curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 brew install pipx
 pipx ensurepath
-chezmoi apply --force
 
 # install brew packages
 brew install git-delta \
@@ -25,8 +24,12 @@ brew install git-delta \
 
 # install node packages
 nvm install node
+chezmoi apply --force
 nvm use node
+
 npm install -g @bitwarden/cli
+
+chezmoi apply --force
 
 {{ else }}
 
