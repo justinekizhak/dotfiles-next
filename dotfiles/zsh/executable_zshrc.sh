@@ -1,3 +1,15 @@
+if [[ -n ${ZSH_VERSION-} ]]; then
+  if ! command -v compinit > /dev/null; then
+    autoload -U +X compinit && if [[ ${ZSH_DISABLE_COMPFIX-} = true ]]; then
+      compinit -u
+    else
+      compinit
+    fi
+  fi
+  autoload -U +X bashcompinit && bashcompinit
+fi
+
+source ~/dotfiles/zsh/argcomplete.zsh
 
 # Alias
 alias ec="emacsclient -c -a '' -n"
