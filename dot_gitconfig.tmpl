@@ -20,8 +20,8 @@
     pager = "delta"
 
 [user]
-	name = Justine Kizhakkinedath
-	email = justine@kizhak.com
-	signingkey = AF716F1D6C54A50A
+    name = {{ (bitwardenFields "item" "GPG agent").FullName.value }}
+    email = {{ (bitwardenFields "item" "GPG agent").Email.value }}
+    signingkey = {{ (bitwardenFields "item" "GPG agent").SigningKey.value }}
 [commit]
 	gpgsign = true
