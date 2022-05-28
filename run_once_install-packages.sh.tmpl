@@ -59,6 +59,30 @@ else
     gpg --import ~/Downloads/gpg_secret.key
 fi
 
+## installation steps for emacs
+
+## mandatory requirement
+$install git --brew
+
+## optional requirement
+$install fd --brew
+$install coreutils --brew
+
+xcode-select --install
+
+brew tap railwaycat/emacsmacport
+
+$install emacs "emacs-mac --with-modules && ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app" --brew
+
+if ~/.emacs.d/bin/doom >/dev/null 2>&1
+then
+    echo '--- Doom already installed'
+else
+    echo '--- Installing Doom'
+    mv ~/.emacs.d ~/.emacs.d.bak
+    git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
+    ~/.emacs.d/bin/doom install
+fi
 
 {{ else }}
 
