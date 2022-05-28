@@ -16,6 +16,7 @@ def checkIfCommandExists (command_name: str, install_script: str, is_brew: bool,
   else:
     if is_brew:
       install_script = f"brew install {install_script or command_name}"
+    print(f"=== Installing {command_name} using `{install_script}`")
     subprocess.run(install_script, shell=True)
 
 

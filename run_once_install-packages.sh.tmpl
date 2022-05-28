@@ -10,7 +10,7 @@
 
 ## Installing packages on Mac
 
-export INSTALL_SCRIPT={{ joinPath .chezmoi.sourceDir "install_package.py" | quote }}
+install="python3 {{ joinPath .chezmoi.sourceDir "install_package.py" | quote }}"
 
 ## install zimfw, nvm and reset all the changes
 
@@ -19,7 +19,7 @@ then
     echo "--- Installing zimfw"
     curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh
 else 
-    echo "--- Zimfw already installed"
+    echo "--- zimfw already installed"
 fi
 
 if ! ls ~/.nvm &> /dev/null
@@ -27,22 +27,24 @@ then
     echo "--- Installing nvm"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 else 
-    echo "--- Nvm already installed"
+    echo "--- nvm already installed"
 fi
 
-python3 $INSTALL_SCRIPT  pipx "pipx && pipx ensurepath" --brew
+$install  pipx "pipx && pipx ensurepath" --brew
 
 # install brew packages
 
-python3 $INSTALL_SCRIPT  delta "git-delta" --brew
-python3 $INSTALL_SCRIPT  bat --brew
-python3 $INSTALL_SCRIPT  rg ripgrep --brew
-python3 $INSTALL_SCRIPT  gh --brew
-python3 $INSTALL_SCRIPT  exa --brew
+$install  delta "git-delta" --brew
+$install  bat --brew
+$install  rg ripgrep --brew
+$install  gh --brew
+$install  exa --brew
 
-python3 $INSTALL_SCRIPT  node "nvm instal node && nvm use node"
+$install  pinentry pinentry-mac --brew
 
-python3 $INSTALL_SCRIPT  bw "npm install -g @bitwarden/cli"
+$install  node "nvm instal node && nvm use node"
+
+$install  bw "npm install -g @bitwarden/cli"
 
 # chezmoi apply --force
 
