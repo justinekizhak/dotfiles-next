@@ -27,11 +27,15 @@ Contains settings for:
 
 All the packages will be installed by the run_once script
 
+## Instruction on setting up GPG signing
+
+https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
+
 # Screenshots
 
 ### ZSH shell
 
-![img](./zsh/images/zsh.png)
+![img](./dotfiles/zsh/images/zsh.png)
 
 # License
 

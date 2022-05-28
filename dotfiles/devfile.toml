@@ -1,9 +1,0 @@
-author = "Justine Kizhakkinedath"
-description = "Bootstrap file"
-
-[[modules]]
-module_type = "phony"
-commands = [ "curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh" ]
-description = "Setup ZIM. Before this"
-name = "zim-setup"
-url = "https://github.com/zimfw/zimfw"
