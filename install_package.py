@@ -24,7 +24,7 @@ parser = argparse.ArgumentParser(description='Check and install packages')
 parser.add_argument('command_name',  type=str, help='command name')
 parser.add_argument('install_script',  type=str, help='install script', nargs='?')
 parser.add_argument("-b", "--brew", action='store_true')
-parser.add_argument('custom_check',  type=str, help='custom_check', nargs='?')
+parser.add_argument('-c', '--custom_check',  type=str, help='custom_check')
 
 args = parser.parse_args()
 

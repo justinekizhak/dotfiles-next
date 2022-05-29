@@ -66,13 +66,13 @@ $install git --brew
 
 ## optional requirement
 $install fd --brew
-$install coreutils --brew
+$install coreutils --brew --custom_check "brew list | rg coreutils"
 
-xcode-select --install
+$install xcode-select 'xcode-select --install' --custom_check "xcode-select -p"
 
 brew tap railwaycat/emacsmacport
 
-$install emacs "emacs-mac --with-modules && ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app" --brew
+$install emacs "emacs-mac --with-modules && ln -s /opt/homebrew/opt/emacs-mac/Emacs.app /Applications/Emacs.app" --brew
 
 if ~/.emacs.d/bin/doom >/dev/null 2>&1
 then
@@ -83,6 +83,8 @@ else
     git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d
     ~/.emacs.d/bin/doom install
 fi
+
+$install apex-voicelines "pipx install apex-legends-voicelines"
 
 {{ else }}
 

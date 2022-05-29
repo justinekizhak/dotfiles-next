@@ -82,7 +82,7 @@
        eshell                ; a consistent, cross-platform shell (WIP)
        ;;shell               ; a terminal REPL for Emacs
        ;;term                ; terminals in Emacs
-       vterm                 ; another terminals in Emacs
+       ;; vterm                 ; another terminals in Emacs
 
        :checkers
        syntax                ; tasing you for every semicolon you forget
@@ -115,7 +115,7 @@
        ;;prodigy             ; FIXME managing external services & code builders
        ;;rgb                 ; creating color strings
        ;;terraform           ; infrastructure as code
-       tmux                  ; an API for interacting with tmux
+       ; tmux                  ; an API for interacting with tmux
        upload                ; map local to remote projects via ssh/ftp
 
        :lang
@@ -149,30 +149,35 @@
        ;;ledger              ; an accounting system in Emacs
        ;;lua                 ; one-based indices? one-based indices
        (markdown
-        +grip)               ; writing docs for people to ignore
+        ; +grip
+        )               ; writing docs for people to ignore
        ;;nim                 ; python + lisp at the speed of c
        ;;nix                 ; I hereby declare "nix geht mehr!"
        ;;ocaml               ; an objective camel
        (org                  ; organize your plain life in plain text
         +attach              ; custom attachment system
         +babel               ; running code in org
-        +brain
+        ; +brain
         +capture             ; org-capture in and outside of Emacs
         +dragndrop           ; drag & drop files/images into org buffers
         +export              ; Exporting org to whatever you want
-        +journal
-        +jupyter
-        +noter
-        +pandoc              ; export-with-pandoc support
-        +present
-        +hugo                ; use Emacs for hugo blogging
-        +roam)               ; using org-mode for presentations
+        ; +journal
+        ; +jupyter
+        ; +noter
+        ; +pandoc              ; export-with-pandoc support
+        ; +present
+        ; +hugo                ; use Emacs for hugo blogging
+        ; +roam
+        )               ; using org-mode for presentations
         ;;+pomodoro          ; be fruitful with the tomato technique
        ;;perl                ; write code no one else can comprehend
        ;;php                 ; perl's insecure younger brother
        ;; plantuml              ; diagrams for confusing people more
        ;;purescript          ; javascript, but functional
-       (python +lsp +poetry) ; beautiful is better than ugly
+       (python 
+              +lsp 
+              ; +poetry
+       ) ; beautiful is better than ugly
        ;;qt                  ; the 'cutest' gui framework ever
        ;;racket              ; a DSL for DSLs
        ;; rest                  ; Emacs as a REST client
@@ -194,7 +199,7 @@
        ;;(wanderlust +gmail)
 
        :app
-       calendar
+       ;; calendar
        ;;irc                 ; how neckbeards socialize
        ;;(rss +org)          ; emacs as an RSS reader
        ;;twitter             ; twitter client https://twitter.com/vnought

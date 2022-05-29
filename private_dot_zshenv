@@ -41,12 +41,9 @@ add_to_path () {
 # Add to path
 add_to_path "$HOME/dotfiles/scripts"
 add_to_path "$HOME/Library/Python/3.7/bin"
-add_to_path "$HOME/.cargo/bin"
-add_to_path "$HOME/flutter/bin"
 add_to_path "$HOME/.local/bin"
-add_to_path "$HOME/doom-emacs/bin"
+add_to_path "$HOME/.emacs.d/bin"
 add_to_path "$HOME/.poetry/bin"
-add_to_path "$HOME/app_binaries"
 add_to_path "/usr/local/opt/python@3.8/bin"
 add_to_path "$HOME/bin"
 add_to_path "$HOME/.deta/bin"
