@@ -203,3 +203,11 @@ Version 2019-11-05"
       :nv "P" #'hydra-paste/evil-paste-before)
 (global-auto-revert-mode 1)
 (setq mac-command-modifier 'meta)
+
+(add-to-list 'load-path "~/emacs-packages/parinfer-rust-mode")
+(add-hook 'emacs-lisp-mode 'parinfer-rust-mode)
+
+; (setq parinfer-rust-auto-download t)
+
+(setq epa-pinentry-mode 'loopback)
+(setq epg-pinentry-mode 'loopback)
