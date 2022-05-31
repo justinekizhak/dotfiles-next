@@ -22,6 +22,7 @@
         +fuzzy               ; a search engine for love and life
         +prescient
         +icons)
+       vertico           ; the search engine of the future
 
        :ui
        ;; deft                  ; notational velocity for Emacs
@@ -140,7 +141,7 @@
        ;;hy                  ; readability of scheme w/ speed of python
        ;;idris
        ;;(java +meghanada)   ; the poster child for carpal tunnel syndrome
-       ;; (javascript +lsp)     ; all(hope(abandon(ye(who(enter(here))))))
+       (javascript +lsp)     ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia               ; a better, faster MATLAB
        ;;kotlin              ; a better, slicker Java(Script)
        ;; latex                 ; writing papers in Emacs has never been so fun
@@ -155,12 +156,12 @@
        ;;nix                 ; I hereby declare "nix geht mehr!"
        ;;ocaml               ; an objective camel
        (org                  ; organize your plain life in plain text
-        +attach              ; custom attachment system
-        +babel               ; running code in org
+        ;; +attach              ; custom attachment system
+        ;; +babel               ; running code in org
         ; +brain
-        +capture             ; org-capture in and outside of Emacs
-        +dragndrop           ; drag & drop files/images into org buffers
-        +export              ; Exporting org to whatever you want
+        ;; +capture             ; org-capture in and outside of Emacs
+        ;; +dragndrop           ; drag & drop files/images into org buffers
+        ;; +export              ; Exporting org to whatever you want
         ; +journal
         ; +jupyter
         ; +noter
@@ -206,5 +207,5 @@
        ;;write               ; emacs for writers (fiction, notes, papers, etc.)
 
        :config
-       ;literate
+       literate
        (default +bindings +smartparens +snippets +evil-commands))
