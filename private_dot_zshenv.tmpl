@@ -6,14 +6,14 @@
 # See LICENSE file in the project root for full information.
 # -----------------------------------------------------------------------------
 
-# Start configuration added by Zim install {{{
+# Start configuration added by Zim install
 #
 # User configuration sourced by all invocations of the shell
 #
 
 # Define Zim location
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
-# }}} End configuration added by Zim install
+# End configuration added by Zim install
 
 # Settings
 export TERM="xterm-256color"
@@ -30,6 +30,10 @@ export DENO_INSTALL="/home/justine/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 # export PATH=$HOME/bin:$PATH
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+
+{{ if contains "highlevel" .chezmoi.username -}}
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/gohighlevel/private/highlevel-staging.json"
+{{ end }}
 
 add_to_path () {
     if ! echo "$PATH" | grep -Eq "(^|:)$1($|:)" ; then
