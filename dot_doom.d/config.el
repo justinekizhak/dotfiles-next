@@ -204,10 +204,18 @@ Version 2019-11-05"
 (global-auto-revert-mode 1)
 (setq mac-command-modifier 'meta)
 
-(add-to-list 'load-path "~/emacs-packages/parinfer-rust-mode")
-(add-hook 'emacs-lisp-mode 'parinfer-rust-mode)
+; (add-to-list 'load-path "~/emacs-packages/parinfer-rust-mode")
+;; (add-hook 'emacs-lisp-mode 'parinfer-rust-mode)
 
 ; (setq parinfer-rust-auto-download t)
 
-(setq epa-pinentry-mode 'loopback)
-(setq epg-pinentry-mode 'loopback)
+;; (setq epa-pinentry-mode 'loopback)
+;; (setq epg-pinentry-mode 'loopback)
+
+(defvar outline-minor-mode-prefix "\M-#")
+(setq lsp-headerline-breadcrumb-enable t)
+(setq lsp-headerline-breadcrumb-icons-enable t)
+(lsp-treemacs-sync-mode 1)
+
+; (map! :leader :desc \"Toggle Treemacs symbol sidebar\" :prefix "o" "s" #'lsp-treemacs-symbols)
+(map! :leader "o s" #'lsp-treemacs-symbols)
