@@ -6,14 +6,14 @@
 # See LICENSE file in the project root for full information.
 # -----------------------------------------------------------------------------
 
-# Start configuration added by Zim install {{{
+# Start configuration added by Zim install
 #
 # User configuration sourced by all invocations of the shell
 #
 
 # Define Zim location
 : ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
-# }}} End configuration added by Zim install
+# End configuration added by Zim install
 
 # Settings
 export TERM="xterm-256color"
@@ -31,6 +31,10 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # export PATH=$HOME/bin:$PATH
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
 
+{{ if contains "highlevel" .chezmoi.username -}}
+export GOOGLE_APPLICATION_CREDENTIALS="$HOME/gohighlevel/private/highlevel-staging.json"
+{{ end }}
+
 add_to_path () {
     if ! echo "$PATH" | grep -Eq "(^|:)$1($|:)" ; then
         export PATH="$PATH:$1"
@@ -41,23 +45,29 @@ add_to_path () {
 # Add to path
 add_to_path "$HOME/dotfiles/scripts"
 add_to_path "$HOME/Library/Python/3.7/bin"
-add_to_path "$HOME/.cargo/bin"
-add_to_path "$HOME/flutter/bin"
 add_to_path "$HOME/.local/bin"
-add_to_path "$HOME/doom-emacs/bin"
+add_to_path "$HOME/.emacs.d/bin"
 add_to_path "$HOME/.poetry/bin"
-add_to_path "$HOME/app_binaries"
 add_to_path "/usr/local/opt/python@3.8/bin"
 add_to_path "$HOME/bin"
 add_to_path "$HOME/.deta/bin"
 
 # . "$HOME/git-subrepo/.rc"
 
+{{ if contains "highlevel" .chezmoi.username -}}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/highlevelwork/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/highlevelwork/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/highlevelwork/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/highlevelwork/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+{{ else }}
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/justinkizhakkinedath/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/justinkizhakkinedath/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/justinkizhakkinedath/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/justinkizhakkinedath/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+{{ end }}
 
 
 export DISPLAY=192.168.0.100:0

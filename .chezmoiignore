@@ -1,3 +1,6 @@
 install_package.py
-README.md
-LICENSE.md
+*.md
+*/*.md
+
+.doom.d/images/
+.doom.d/audio/
